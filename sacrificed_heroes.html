@@ -47,15 +47,37 @@
 				"Last Stand in Rostand |  | 116 | East Side",
 				"Last Stand in Rostand |  | 116 | East Side",
 				"Last Stand in Rostand |  | 116 | East Side",
-				"Last Stand in Rostand | Linn |  | East Side",
+				"Last Stand in Rostand | Linn |  | East Side",		// INDEX 39
 				"Last Stand in Rostand | Alian | 116 | ",
 				"Last Stand in Rostand | Bob | 116 | ",
 				"Last Stand in Rostand | Charlie | 116 | ",
 				"Last Stand in Rostand | Dessy | 116 | ",
-				"Last Stand in Rostand | Emily | 116 | ",
-				// Dont't need it yet
-				// Further Step : Add Months of Death into the data(It can be missing as well)
+				"Last Stand in Rostand | Emily | 116 | ",		// INDEX 44
+				// ------Further Step : Dont't need it yet ------
+				// Add Months of Death into the data(It can be missing as well)
 			];
+			
+			// ------ Test1: Test datas in the console ------
+			// for (let i = 0; i < sacrificedHeroes.length; i++) {
+			// 	console.log(sacrificedHeroes[i]);
+			// }
+			
+			let heroList = [];
+			// ------ Test2: Put datas into new array ------
+			function getNewArray(inputString) {
+				const oldArray = inputString.split("|");
+				const newArray = [];
+				for (let i = 0; i < oldArray.length; i++) {
+					newArray.push(oldArray[i].trim());
+				}
+				console.log(newArray);
+			}
+			getNewArray(sacrificedHeroes[39]);
+			// ------ Test3: Test before checking missing datas ------
+			const testTruthy = "Eino";
+			const testFalsy = "";
+			console.log(testTruthy || "Unknown");
+			console.log(testFalsy || "Unknown");
 		</script>
 	</body>
 </html>
