@@ -62,18 +62,38 @@
 			// 	console.log(sacrificedHeroes[i]);
 			// }
 			
-			let heroList = [];
+			// HAVEN'T be assigned yet
+			let newHeroList = [];
+			
 			// ------ Test2: Put datas into new array ------
+			// Get new 1D array from a string
 			function getNewArray(inputString) {
 				const oldArray = inputString.split("|");
-				const newArray = [];
+				const newSingleArray = [];
 				for (let i = 0; i < oldArray.length; i++) {
-					newArray.push(oldArray[i].trim());
+					const pieceOfData = oldArray[i].trim();
+					// ------ Test5: Fill in the missing items ------
+					if(pieceOfData === "") {
+						newSingleArray.push("Unknown");
+					}else{
+						newSingleArray.push(pieceOfData);
+					}
 				}
-				console.log(newArray);
+				return newSingleArray;
 			}
-			getNewArray(sacrificedHeroes[39]);
+			// ------ Test4: Get 2D array ------
+			function get2DArray(oldHeroList) {
+				const new2DArray = [];
+				for (let i = 0; i < oldHeroList.length; i++) {
+					const oneSingleArray = getNewArray(oldHeroList[i]);
+					new2DArray.push(oneSingleArray);
+				}
+				return new2DArray;
+			}
+			console.log(get2DArray(sacrificedHeroes));
+			
 			// ------ Test3: Test before checking missing datas ------
+			// HAVEN'T used || (OR OPERATOR) in my program yet
 			const testTruthy = "Eino";
 			const testFalsy = "";
 			console.log(testTruthy || "Unknown");
