@@ -63,7 +63,7 @@
 			// }
 			
 			// HAVEN'T be assigned yet
-			let newHeroList = [];
+			let heroList = [];
 			
 			// ------ Test2: Put datas into new array ------
 			// Get new 1D array from a string
@@ -90,7 +90,35 @@
 				}
 				return new2DArray;
 			}
-			console.log(get2DArray(sacrificedHeroes));
+			heroList = get2DArray(sacrificedHeroes);
+			// console.log(heroList);		// Test the output of Test 4
+			
+			// ------ Test5: Group by battle ------
+			const fallenCity = "The Battle of Rostand's Fall";
+			const cityDefense = "The Defense of New Rostand";
+			const lastStand = "Last Stand in Rostand";
+			
+			const battleOfFallenList = [];
+			const battleOfDefenseList = [];
+			const battleOfLastStandList = [];
+			
+			function groupByBattle(herolist) {
+				for (let i = 0; i < herolist.length; i++) {
+					const battle = herolist[i][0];
+					if(battle === fallenCity) {
+						battleOfFallenList.push(herolist[i]);
+					}else if(battle === cityDefense) {
+						battleOfDefenseList.push(herolist[i]);
+					}else if(battle === lastStand) {
+						battleOfLastStandList.push(herolist[i]);
+					}
+				}
+			}
+			groupByBattle(heroList);
+			// Test the output of global variable
+			console.log(battleOfFallenList);
+			console.log(battleOfDefenseList);
+			console.log(battleOfLastStandList);
 			
 			// ------ Test3: Test before checking missing datas ------
 			// HAVEN'T used || (OR OPERATOR) in my program yet
