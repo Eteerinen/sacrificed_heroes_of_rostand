@@ -121,6 +121,44 @@
 			console.log(battleOfLastStandList);
 			
 			// ------ Test6: Group by years ------
+			const battleOf110 = [];
+			const battleOf111 = [];
+			const battleOf112 = [];
+			const battleOf113 = [];
+			const battleOf114 = [];
+			const battleOf115 = [];
+			const battleOf116 = [];
+			
+			function groupByYears(herolist) {
+				for (let i = 0; i < herolist.length; i++) {
+					const year = herolist[i][2];
+					switch(year) {
+						case "110": 
+							battleOf110.push(herolist[i]);
+							break;
+						case "111":
+							console.log("LINN111");
+							break;
+						case "112":
+							console.log("LINN112");
+							break;
+						case "113":
+							console.log("LINN113");
+							break;
+						case "114":
+							console.log("LINN114");
+							break;
+						case "115":
+							console.log("LINN115");
+							break;	
+						case "116":
+							console.log("LINN116");
+							break;
+					}
+				}
+			}
+			groupByYears(heroList);
+			console.log(battleOf110);
 			
 			// ------ Test7: Sort out datas with missing items ------
 			
