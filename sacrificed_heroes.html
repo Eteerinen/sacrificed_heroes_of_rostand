@@ -5,7 +5,8 @@
 		<title>Sacrificed Heroes</title>
 	</head>
 	<body>
-		<table>
+		<h1>SACRIFICED HEROS</h1>
+		<table id="tTable">
 			<thead>
 				<th>BATTLEFIELD</th>
 				<th>THE FALLEN</th>
@@ -14,6 +15,9 @@
 			</thead>
 			<tbody id="tBody"></tbody>
 		</table>
+		<button id="btnVisibility">
+			<p id="pBtnVisibleText">HIDE THE FALLEN</p>
+		</button>
 		<script>
 			const sacrificedHeroes = [
 				"The Battle of Rostand's Fall | Ella | 110 | Seaside",
@@ -221,6 +225,25 @@
 					tr.appendChild(td);
 				});
 				tbody.appendChild(tr);
+				// Add p_btn textcontent
+			});
+			
+			// ------ Test9: Show the table, or make it invisible ------
+			const btn_visibility = document.getElementById("btnVisibility");
+			const p_btn_visible = document.getElementById("pBtnVisibleText");
+			
+			let flag_visible = true;
+			
+			btn_visibility.addEventListener("click", () => {
+				if(flag_visible === true){
+					p_btn_visible.textContent = "HIDE THE FALLEN";
+					tbody.style.display = "none";
+					flag_visible = false;
+				}else{
+					p_btn_visible.textContent = "SHOW THE FALLEN";
+					tbody.style.display = "block";
+					flag_visible = true;
+				}
 			});
 		</script>
 	</body>
