@@ -167,6 +167,31 @@
 			console.log(battleOf116);
 			
 			// ------ Test7: Sort out datas with missing items ------
+			const battleOfMissingItems = [];
+			const battleOfMissingName = [];
+			const battleOfMissingYear = [];
+			const battleOfMissingPlace = [];
+						
+			function groupByAllMissingItems(herolist) {
+				for (let i = 0; i < herolist.length; i++) {
+					if(herolist[i][1] === "Unknown") {
+						battleOfMissingItems.push(herolist[i]);
+						battleOfMissingName.push(herolist[i]);
+					}else if(herolist[i][2] === "Unknown") {
+						battleOfMissingItems.push(herolist[i]);
+						battleOfMissingYear.push(herolist[i]);
+					}else if(herolist[i][3] === "Unknown") {
+						battleOfMissingItems.push(herolist[i]);
+						battleOfMissingPlace.push(herolist[i]);
+					}
+				}
+			}
+			console.log("------------------ Test 7 ------------------")
+			groupByAllMissingItems(heroList);
+			console.log("All Missing Items: " + battleOfMissingItems);
+			console.log("Nameless: " + battleOfMissingName);
+			console.log("Undated: " + battleOfMissingYear);
+			console.log("Nowhere: " + battleOfMissingPlace);
 			
 			// ------ Test3: Test before checking missing datas ------
 			// HAVEN'T used || (OR OPERATOR) in my program yet
