@@ -5,6 +5,15 @@
 		<title>Sacrificed Heroes</title>
 	</head>
 	<body>
+		<table>
+			<thead>
+				<th>BATTLEFIELD</th>
+				<th>THE FALLEN</th>
+				<th>THE YEAR</th>
+				<th>THE SITE</th>
+			</thead>
+			<tbody id="tBody"></tbody>
+		</table>
 		<script>
 			const sacrificedHeroes = [
 				"The Battle of Rostand's Fall | Ella | 110 | Seaside",
@@ -62,7 +71,8 @@
 			// 	console.log(sacrificedHeroes[i]);
 			// }
 			
-			// HAVEN'T be assigned yet
+			// For changing string into array
+			// heroList = get2DArray(sacrificedHeroes);
 			let heroList = [];
 			
 			// ------ Test2: Put datas into new array ------
@@ -199,6 +209,19 @@
 			const testFalsy = "";
 			console.log(testTruthy || "Unknown");
 			console.log(testFalsy || "Unknown");
+			
+			// ------ Test8: Link to Frontend: Traverse heroList ------
+			const tbody = document.getElementById("tBody");
+			
+			heroList.forEach(row => {
+				const tr = document.createElement("tr");
+				row.forEach(cell => {
+					const td = document.createElement("td");
+					td.textContent = cell;
+					tr.appendChild(td);
+				});
+				tbody.appendChild(tr);
+			});
 		</script>
 	</body>
 </html>
